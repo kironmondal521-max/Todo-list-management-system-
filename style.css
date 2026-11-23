@@ -1,0 +1,286 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #6558d3;
+  --primary-dark: #5145b5;
+  --text: #25243a;
+  --muted: #77768b;
+  --border: #e9e8f1;
+  --background: #f5f5fb;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 40px 16px;
+  background: linear-gradient(135deg, #f2f1ff, #f8f9ff);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.app {
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 34px;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  box-shadow: 0 18px 55px rgba(45, 39, 100, 0.09);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: var(--primary);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(28px, 5vw, 38px);
+}
+
+.subtitle {
+  margin: 9px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.date {
+  padding: 10px 13px;
+  border-radius: 12px;
+  background: #f2f0ff;
+  color: var(--primary-dark);
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.task-entry {
+  display: flex;
+  gap: 10px;
+}
+
+.task-entry input {
+  flex: 1;
+  min-width: 0;
+  padding: 15px 16px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  outline: none;
+  font-size: 14px;
+}
+
+.task-entry input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(101, 88, 211, 0.12);
+}
+
+button {
+  cursor: pointer;
+  font: inherit;
+}
+
+#addButton {
+  padding: 0 20px;
+  border: 0;
+  border-radius: 12px;
+  background: var(--primary);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+#addButton:hover {
+  background: var(--primary-dark);
+}
+
+.error {
+  min-height: 18px;
+  margin: 8px 0 0;
+  color: #d33c4b;
+  font-size: 12px;
+}
+
+.summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin: 20px 0 32px;
+}
+
+.summary-card {
+  padding: 17px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: #fcfcff;
+}
+
+.summary-card span {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--primary);
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.summary-card small {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.list-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+h2 {
+  margin: 0;
+  font-size: 19px;
+}
+
+.filters {
+  display: flex;
+  gap: 5px;
+  padding: 4px;
+  border-radius: 10px;
+  background: #f4f3fa;
+}
+
+.filter {
+  padding: 8px 11px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.filter.active {
+  background: #fff;
+  color: var(--primary-dark);
+  box-shadow: 0 1px 5px rgba(30, 25, 70, 0.08);
+  font-weight: 700;
+}
+
+.task-list {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.task-item input {
+  width: 17px;
+  height: 17px;
+  accent-color: var(--primary);
+  cursor: pointer;
+}
+
+.task-text {
+  flex: 1;
+  overflow-wrap: anywhere;
+  font-size: 14px;
+}
+
+.task-item.completed .task-text {
+  color: #9998a8;
+  text-decoration: line-through;
+}
+
+.delete-button {
+  padding: 7px 10px;
+  border: 0;
+  border-radius: 8px;
+  background: #fff0f1;
+  color: #c63c4a;
+  font-size: 12px;
+}
+
+.delete-button:hover {
+  background: #ffe1e4;
+}
+
+.empty-message {
+  padding: 28px 10px;
+  color: var(--muted);
+  text-align: center;
+  font-size: 14px;
+}
+
+footer {
+  margin-top: 30px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+  color: #9998a8;
+  text-align: center;
+  font-size: 11px;
+}
+
+@media (max-width: 560px) {
+  body {
+    padding: 18px 10px;
+  }
+
+  .app {
+    padding: 22px 16px;
+  }
+
+  .header {
+    flex-direction: column;
+  }
+
+  .task-entry {
+    flex-direction: column;
+  }
+
+  #addButton {
+    min-height: 46px;
+  }
+
+  .list-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .filters {
+    width: 100%;
+  }
+
+  .filter {
+    flex: 1;
+  }
+
+  .summary-card {
+    padding: 13px 9px;
+  }
+
+  .summary-card span {
+    font-size: 22px;
+  }
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do List Management System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="header">
+      <div>
+        <p class="eyebrow">STAY ORGANIZED</p>
+        <h1>My To-Do List</h1>
+        <p class="subtitle">Plan your day, one task at a time.</p>
+      </div>
+      <div class="date" id="today"></div>
+    </header>
+
+    <section class="task-entry" aria-label="Add a task">
+      <input id="taskInput" type="text" placeholder="What do you need to do?" maxlength="100" autocomplete="off">
+      <button id="addButton" type="button">+ Add Task</button>
+    </section>
+    <p id="errorMessage" class="error" role="alert"></p>
+
+    <section class="summary" aria-label="Task summary">
+      <div class="summary-card"><span id="totalCount">0</span><small>Total Tasks</small></div>
+      <div class="summary-card"><span id="pendingCount">0</span><small>Pending</small></div>
+      <div class="summary-card"><span id="completedCount">0</span><small>Completed</small></div>
+    </section>
+
+    <section class="list-section">
+      <div class="list-heading">
+        <h2>Your Tasks</h2>
+        <div class="filters" aria-label="Filter tasks">
+          <button class="filter active" data-filter="all" type="button">All</button>
+          <button class="filter" data-filter="pending" type="button">Pending</button>
+          <button class="filter" data-filter="completed" type="button">Completed</button>
+        </div>
+      </div>
+      <ul id="taskList" class="task-list"></ul>
+      <p id="emptyMessage" class="empty-message">No tasks here yet. Add your first task above!</p>
+    </section>
+
+    <footer>To-Do List Management System · Built with HTML, CSS &amp; JavaScript</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
